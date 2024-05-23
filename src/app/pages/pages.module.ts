@@ -1,4 +1,5 @@
-import { UserComponent } from './/user/user.component';
+import { ComponentsModule } from './../components/components.module';
+import { UserComponent } from './user/user.component';
 import { RequestsComponent } from './requests/requests.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -13,10 +14,11 @@ const components = [
 ]
 
 @NgModule({
-  declarations: [],
+  declarations: components,
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    ComponentsModule
   ]
 })
 export class PagesModule { }

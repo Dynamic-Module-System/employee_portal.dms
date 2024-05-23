@@ -14,6 +14,7 @@ const routes: Routes = [
   // { path: 'notifications',  component: NotificationsComponent },
   // { path: 'upgrade',        component: UpgradeComponent },
   { path: 'requests',       component: RequestsComponent },
+  { path: '**', redirectTo: 'dashboard' }
 ];
 
 @NgModule({

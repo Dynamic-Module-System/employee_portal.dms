@@ -1,26 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import { environment } from './../environments/environment';
+import { ActivatedRoute } from '@angular/router';
+import { LocalStorageService } from './services/local-storage.service';
+import { Component, OnInit } from "@angular/core";
+import { LocationStrategy, PlatformLocation, Location } from "@angular/common";
+import { firstValueFrom } from 'rxjs'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
+  
+  constructor(private localStorageService: LocalStorageService, private route: ActivatedRoute,) {}
 
-     constructor(public location: Location) {}
+  ngOnInit() { }
 
-    ngOnInit(){
-    }
-
-    isMap(path){
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      titlee = titlee.slice( 1 );
-      if(path == titlee){
-        return false;
-      }
-      else {
-        return true;
-      }
-    }
 }
